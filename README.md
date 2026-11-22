@@ -1,78 +1,75 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🍔 neonbite-landing-page
 
-Currently, two official plugins are available:
+![phoot](/burger.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Crave. Click. Glow.
 
-## React Compiler
+A neon-lit, dark-themed food delivery web experience built with  
+**React**, **Tailwind CSS** and **GSAP**.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![GSAP](https://img.shields.io/badge/GSAP-3-88CE02?style=for-the-badge&logo=greensock&logoColor=black)](https://gsap.com)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-ff2d95?style=for-the-badge)](LICENSE)
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+[🚀 Live Demo](https://your-demo-link.com) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
 
-## Expanding the ESLint configuration
+<br />
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img src="./screenshots/preview.png" alt="NeonBite Preview" width="85%" />
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+</div>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ✨ Overview
 
+**NeonBite** is a modern food delivery front-end that combines a glowing
+neon aesthetic with buttery-smooth motion. From the hero section to the cart
+flow, every interaction is designed to feel fast, playful and appetizing.
+
+## 🔥 Features
+
+- 🎨 **Neon dark UI** – glowing borders, gradients and shadows
+- 🎬 **GSAP animations** – hero entrance, scroll-triggered reveals, hover micro-interactions
+- 🍕 **Food categories** – Pizza, Burger, Biryani, Pasta, Sushi, Desserts, Drinks
+- ⭐ **Popular dishes** – cards with badges (Bestseller, Spicy, New…)
+- 🎟️ **Exclusive offers** – promo sections with coupon codes
+- 🛒 **Cart & checkout preview** – mobile-style cart UI
+- 📱 **Fully responsive** – desktop, tablet and mobile
+- 📲 **App download section** – store buttons + QR code
+- ⚡ **Blazing fast** – powered by Vite|
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js ≥ 18
+- npm / yarn / pnpm
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/neonbite.git
+
+# 2. Go to the project folder
+cd neonbite
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the dev server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Open **http://localhost:5173** in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run build
+npm run preview
 ```
