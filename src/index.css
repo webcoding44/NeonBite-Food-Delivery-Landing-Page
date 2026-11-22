@@ -1,1 +1,193 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #050507;
+  --color-panel: #0c0b10;
+  --color-neon: #ff2d78;
+  --color-neon-soft: #ff5c9a;
+  --color-amber: #ff9f1c;
+}
+
+html {
+  scroll-behavior: auto;
+  background: #050507;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: #fff;
+  background:
+    radial-gradient(900px 500px at 15% -5%, rgba(255, 45, 120, 0.18), transparent 60%),
+    radial-gradient(800px 500px at 100% 10%, rgba(255, 159, 28, 0.08), transparent 60%),
+    #050507;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+::selection {
+  background: #ff2d78;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff2d78, #ff9f1c);
+  border-radius: 8px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* neon helpers */
+.neon-border {
+  border: 1.5px solid rgba(255, 45, 120, 0.85);
+  box-shadow:
+    0 0 0 1px rgba(255, 45, 120, 0.15) inset,
+    0 0 14px rgba(255, 45, 120, 0.35),
+    0 0 40px rgba(255, 45, 120, 0.12) inset;
+}
+.neon-border-soft {
+  border: 1px solid rgba(255, 45, 120, 0.45);
+  box-shadow:
+    0 0 12px rgba(255, 45, 120, 0.18),
+    0 0 30px rgba(255, 45, 120, 0.06) inset;
+}
+.neon-amber {
+  border: 1px solid rgba(255, 159, 28, 0.6);
+  box-shadow:
+    0 0 12px rgba(255, 159, 28, 0.22),
+    0 0 30px rgba(255, 159, 28, 0.05) inset;
+}
+.text-glow {
+  text-shadow: 0 0 18px rgba(255, 45, 120, 0.8), 0 0 40px rgba(255, 45, 120, 0.4);
+}
+.text-glow-amber {
+  text-shadow: 0 0 18px rgba(255, 159, 28, 0.7), 0 0 40px rgba(255, 159, 28, 0.3);
+}
+.glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(10px);
+}
+
+.btn-neon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #ff2d78, #ff1458 60%, #d90f5f);
+  box-shadow: 0 0 22px rgba(255, 45, 120, 0.6), 0 0 60px rgba(255, 45, 120, 0.25);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 150, 190, 0.6);
+  transition: box-shadow 0.3s;
+}
+.btn-neon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-neon:hover::after {
+  transform: translateX(120%);
+}
+.btn-neon:hover {
+  box-shadow: 0 0 30px rgba(255, 45, 120, 0.9), 0 0 80px rgba(255, 45, 120, 0.4);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-ghost:hover {
+  border-color: #ff2d78;
+  box-shadow: 0 0 20px rgba(255, 45, 120, 0.45);
+  background: rgba(255, 45, 120, 0.08);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 45, 120, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 45, 120, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+
+.spin-slow {
+  animation: spin 14s linear infinite;
+}
+.spin-rev {
+  animation: spin 22s linear infinite reverse;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow,
+  .spin-rev {
+    animation: none;
+  }
+}
